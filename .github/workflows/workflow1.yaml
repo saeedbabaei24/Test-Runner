@@ -1,0 +1,13 @@
+name: workflow 1
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test-runner:
+    runs-on: self-hosted
+    steps:
+      - name: Print a message
+        run: |
+          echo "Hello from self-hosted runner!"
+          sleep 111
