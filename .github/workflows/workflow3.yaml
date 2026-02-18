@@ -1,0 +1,6 @@
+- name: Debug docker access
+  run: |
+    id
+    groups
+    docker version
+    docker ps
