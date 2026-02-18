@@ -1,6 +1,17 @@
-- name: Debug docker access
-  run: |
-    id
-    groups
-    docker version
-    docker ps
+name: docker debug
+
+on:
+  workflow_dispatch:
+  push:
+
+jobs:
+  debug:
+    runs-on: self-hosted
+    steps:
+      - name: Debug docker access
+        run: |
+          id
+          groups
+          ls -l /var/run/docker.sock || true
+          docker version || true
+          docker ps || true
